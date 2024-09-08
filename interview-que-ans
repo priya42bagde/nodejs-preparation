@@ -1,0 +1,311 @@
+List of 100 Node.js interview questions:
+
+1. What is Node.js and why is it used?
+Answer: Node.js is a powerful, open-source, server-side runtime environment built on Chrome's V8 JavaScript engine. It enables developers to use JavaScript to write server-side code, which traditionally was handled by other languages like PHP, Python, or Java. This allows for JavaScript to be used across the entire stack(i.e, frontend and backend), promoting a unified development experience.
+
+Node.js is particularly known for its non-blocking, event-driven(means that the system responds to events (like user actions or network requests) and processes them asynchronously, allowing the application to handle multiple tasks concurrently without blocking other operations) architecture. This means it can handle multiple requests concurrently without waiting for each one to complete before starting the next. This makes Node.js highly efficient and suitable for building scalable network applications, such as real-time chat applications, online gaming, and APIs that need to handle many connections simultaneously.
+
+One of the standout features of Node.js is its package manager, npm, which provides access to a vast ecosystem of libraries and tools that can significantly accelerate development. Its asynchronous nature and event loop model make it ideal for I/O-heavy tasks, such as reading files, querying databases, or making network requests, as it can handle these operations without blocking other tasks.
+
+Analogy:
+Think of Node.js as a highly efficient restaurant kitchen. Imagine a kitchen where the chef (Node.js) can start preparing a dish, then immediately move on to the next order without waiting for the first dish to be fully cooked before starting the next. This way, the kitchen can handle many orders simultaneously, ensuring that all dishes are served quickly and efficiently. Similarly, Node.js handles multiple client requests simultaneously, ensuring that your server remains responsive and capable of managing a high volume of interactions.
+
+-----------------------------------------------------------------------------------
+2. Explain the event-driven architecture of Node.js.
+
+-----------------------------------------------------------------------------------
+3. What are the main features of Node.js?
+
+-----------------------------------------------------------------------------------
+4. How does Node.js handle asynchronous operations?
+
+-----------------------------------------------------------------------------------
+5. What is the role of the event loop in Node.js?
+
+-----------------------------------------------------------------------------------
+6. What is a callback function in Node.js?
+
+-----------------------------------------------------------------------------------
+7. Explain the concept of Promises in Node.js.
+
+-----------------------------------------------------------------------------------
+8. What is the purpose of the `async` and `await` keywords in Node.js?
+
+-----------------------------------------------------------------------------------
+9. How does Node.js handle errors in asynchronous code?
+
+-----------------------------------------------------------------------------------
+10. What is the difference between synchronous and asynchronous functions?
+
+-----------------------------------------------------------------------------------
+11. What is the purpose of the `require` function in Node.js?
+
+-----------------------------------------------------------------------------------
+12. How does Node.js manage modules and dependencies?
+
+-----------------------------------------------------------------------------------
+13. What is the CommonJS module system?
+
+-----------------------------------------------------------------------------------
+14. Explain the concept of middleware in Express.js.
+
+-----------------------------------------------------------------------------------
+15. How can you handle uncaught exceptions in Node.js?
+
+-----------------------------------------------------------------------------------
+16. What are Streams in Node.js and how are they used?
+
+-----------------------------------------------------------------------------------
+17. Explain the different types of streams in Node.js.
+
+-----------------------------------------------------------------------------------
+18. What is the purpose of the `process` object in Node.js?
+
+-----------------------------------------------------------------------------------
+19. How can you manage environment variables in Node.js applications?
+
+-----------------------------------------------------------------------------------
+20. What is the role of `package.json` in a Node.js project?
+
+-----------------------------------------------------------------------------------
+21. How do you create and use custom modules in Node.js?
+
+-----------------------------------------------------------------------------------
+22. Explain the concept of the `buffer` in Node.js.
+
+-----------------------------------------------------------------------------------
+23. What are the differences between `Buffer.from()` and `Buffer.alloc()`?
+
+-----------------------------------------------------------------------------------
+24. How does Node.js handle file operations?
+
+-----------------------------------------------------------------------------------
+25. What is the purpose of the `fs` module in Node.js?
+
+-----------------------------------------------------------------------------------
+26. Explain the difference between `fs.readFile` and `fs.createReadStream`.
+
+-----------------------------------------------------------------------------------
+27. What is the role of the `path` module in Node.js?
+
+-----------------------------------------------------------------------------------
+28. How can you parse URLs in Node.js?
+
+-----------------------------------------------------------------------------------
+29. What is the role of the `http` module in Node.js?
+
+-----------------------------------------------------------------------------------
+30. How can you create an HTTP server using Node.js?
+
+-----------------------------------------------------------------------------------
+31. What are the different HTTP methods and their uses?
+
+-----------------------------------------------------------------------------------
+32. How can you make HTTP requests in Node.js?
+
+-----------------------------------------------------------------------------------
+33. Explain the use of the `url` module in Node.js.
+
+-----------------------------------------------------------------------------------
+34. What is Express.js and how does it enhance Node.js?
+
+-----------------------------------------------------------------------------------
+35. How do you handle routing in Express.js?
+
+-----------------------------------------------------------------------------------
+36. What are HTTP status codes and how do you use them in Express.js?
+
+-----------------------------------------------------------------------------------
+37. What is middleware in Express.js and how is it used?
+
+-----------------------------------------------------------------------------------
+38. How can you handle form data in Express.js?
+
+-----------------------------------------------------------------------------------
+39. What are the differences between `req.query`, `req.params`, and `req.body` in Express.js?
+
+-----------------------------------------------------------------------------------
+40. Explain the purpose of `app.use()` in Express.js.
+
+-----------------------------------------------------------------------------------
+41. How can you handle errors in an Express.js application?
+
+-----------------------------------------------------------------------------------
+42. What is CORS and how can you handle it in a Node.js application?
+
+-----------------------------------------------------------------------------------
+43. How do you implement authentication in a Node.js application?
+
+-----------------------------------------------------------------------------------
+44. What is Passport.js and how is it used with Node.js?
+
+-----------------------------------------------------------------------------------
+45. How can you use sessions in a Node.js application?
+
+-----------------------------------------------------------------------------------
+46. What are the different types of databases you can use with Node.js?
+
+-----------------------------------------------------------------------------------
+47. How do you connect to a MongoDB database from a Node.js application?
+
+-----------------------------------------------------------------------------------
+48. What is Mongoose and how does it simplify MongoDB interactions?
+
+-----------------------------------------------------------------------------------
+49. Explain how you would perform CRUD operations in a Node.js application.
+
+-----------------------------------------------------------------------------------
+50. What is the purpose of the `jsonwebtoken` library in Node.js?
+
+-----------------------------------------------------------------------------------
+51. How can you handle file uploads in a Node.js application?
+
+-----------------------------------------------------------------------------------
+52. What are some best practices for error handling in Node.js applications?
+
+-----------------------------------------------------------------------------------
+53. How can you implement logging in a Node.js application?
+
+-----------------------------------------------------------------------------------
+54. What is the role of the `os` module in Node.js?
+
+-----------------------------------------------------------------------------------
+55. How can you perform background tasks in Node.js?
+
+-----------------------------------------------------------------------------------
+56. What are WebSockets and how can you implement them in Node.js?
+
+-----------------------------------------------------------------------------------
+57. How does Node.js handle concurrency?
+
+-----------------------------------------------------------------------------------
+58. What are the benefits of using Node.js for building APIs?
+
+-----------------------------------------------------------------------------------
+59. How can you test Node.js applications?
+
+-----------------------------------------------------------------------------------
+60. What are some popular testing frameworks for Node.js?
+
+-----------------------------------------------------------------------------------
+61. How do you use the `mocha` and `chai` libraries for testing in Node.js?
+
+-----------------------------------------------------------------------------------
+62. What is a memory leak and how can you prevent it in Node.js?
+
+-----------------------------------------------------------------------------------
+63. How can you optimize the performance of a Node.js application?
+
+-----------------------------------------------------------------------------------
+64. What are some common security issues in Node.js applications?
+
+-----------------------------------------------------------------------------------
+65. How can you secure a Node.js application from common vulnerabilities?
+
+-----------------------------------------------------------------------------------
+66. What is the purpose of the `cluster` module in Node.js?
+
+-----------------------------------------------------------------------------------
+67. How can you scale a Node.js application?
+
+-----------------------------------------------------------------------------------
+68. What is Node.js's role in microservices architecture?
+
+-----------------------------------------------------------------------------------
+69. How do you handle concurrency in Node.js?
+
+-----------------------------------------------------------------------------------
+70. What are some tools for monitoring Node.js applications?
+
+-----------------------------------------------------------------------------------
+71. How can you profile a Node.js application for performance bottlenecks?
+
+-----------------------------------------------------------------------------------
+72. What is the purpose of the `child_process` module in Node.js?
+
+-----------------------------------------------------------------------------------
+73. How can you manage and schedule tasks in a Node.js application?
+
+-----------------------------------------------------------------------------------
+74. What is the `stream` module and how do you use it in Node.js?
+
+-----------------------------------------------------------------------------------
+75. Explain the concept of Node.js's non-blocking I/O.
+
+-----------------------------------------------------------------------------------
+76. How do you handle large amounts of data in Node.js?
+
+-----------------------------------------------------------------------------------
+77. What is the purpose of `npm` and how does it differ from `yarn`?
+
+-----------------------------------------------------------------------------------
+78. How can you create a RESTful API using Node.js?
+
+-----------------------------------------------------------------------------------
+79. What is the role of the `assert` module in Node.js?
+
+-----------------------------------------------------------------------------------
+80. How can you use environment variables to configure a Node.js application?
+
+-----------------------------------------------------------------------------------
+81. What are the differences between Node.js and other server-side technologies like Python and Ruby?
+
+-----------------------------------------------------------------------------------
+82. How does Node.js handle backpressure in streams?
+
+-----------------------------------------------------------------------------------
+83. What are some common performance issues in Node.js applications?
+
+-----------------------------------------------------------------------------------
+84. How can you debug a Node.js application?
+
+-----------------------------------------------------------------------------------
+85. What is the role of the `v8` module in Node.js?
+
+-----------------------------------------------------------------------------------
+86. How can you use the `debug` module in Node.js?
+
+-----------------------------------------------------------------------------------
+87. What are the different ways to manage dependencies in Node.js?
+
+-----------------------------------------------------------------------------------
+88. How do you handle cross-platform issues in Node.js?
+
+-----------------------------------------------------------------------------------
+89. How does Node.js integrate with frontend frameworks like React or Angular?
+
+-----------------------------------------------------------------------------------
+90. What are the best practices for structuring a Node.js application?
+
+-----------------------------------------------------------------------------------
+91. How can you use `pm2` for managing Node.js processes?
+
+-----------------------------------------------------------------------------------
+92. What are the security implications of using third-party modules in Node.js?
+
+-----------------------------------------------------------------------------------
+93. How can you implement rate limiting in a Node.js application?
+
+-----------------------------------------------------------------------------------
+94. What are some common patterns for handling asynchronous operations in Node.js?
+
+-----------------------------------------------------------------------------------
+95. How can you create a CLI tool using Node.js?
+
+-----------------------------------------------------------------------------------
+96. How does Node.js manage and optimize garbage collection?
+
+-----------------------------------------------------------------------------------
+97. What are some common pitfalls when working with Node.js?
+
+-----------------------------------------------------------------------------------
+98. How can you implement caching in a Node.js application?
+
+-----------------------------------------------------------------------------------
+99. How can you use the `assert` module for testing in Node.js?
+
+-----------------------------------------------------------------------------------
+100. How do you handle different environments (development, staging, production) in Node.js applications?
+
+-----------------------------------------------------------------------------------
+
