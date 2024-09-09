@@ -12,7 +12,12 @@ Think of Node.js as a highly efficient restaurant kitchen. Imagine a kitchen whe
 
 -----------------------------------------------------------------------------------
 2. Explain the event-driven architecture of Node.js.
+Answer: The event-driven architecture of Node.js is one of its most powerful features. At its core, Node.js uses an event loop to handle asynchronous operations, which is key for scalability. When a request comes in, instead of blocking the entire process to wait for a response, Node.js registers the event (like reading from a file or querying a database) and moves on to handle other requests. Once the operation is complete, the registered callback function is executed. This is what makes Node.js non-blocking, allowing it to handle thousands of concurrent connections efficiently.
 
+The core idea is that Node.js doesn’t wait for any I/O operations to complete. Instead, it assigns tasks, listens for events, and responds when they’re ready, making it highly suitable for building fast, scalable applications.
+
+Analogy: 
+Think of Node.js as a restaurant with one chef who’s really good at multitasking. Instead of waiting around for the oven to finish cooking or the water to boil, the chef starts preparing other orders. When something is done (like the oven timer going off), the chef quickly attends to it without pausing all the other work. This way, the kitchen runs smoothly, and multiple meals can be prepared at the same time.
 -----------------------------------------------------------------------------------
 3. What are the main features of Node.js?
 
