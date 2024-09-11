@@ -42,6 +42,13 @@ Think of Node.js like a food delivery app that handles thousands of orders simul
 -----------------------------------------------------------------------------------
 4. How does Node.js handle asynchronous operations?
 
+Answer: Node.js uses something called non-blocking I/O with an event-driven architecture, meaning it can handle multiple operations at the same time without waiting for one to finish before starting another.
+Let me explain that with an example. Say you are building a web server in Node.js, and you need to read some files from the disk. If Node.js handled things synchronously (like traditional programming languages), it would wait for the file reading operation to finish before moving on to the next task. This would make the server slow, especially if it had multiple tasks to perform.
+But in Node.js, operations like reading files, making network requests, or querying databases are asynchronous. When you tell Node.js to read a file, it sends the request to the file system and immediately moves on to handle the next task, without waiting. Once the file is read, Node.js gets notified through a callback, promise, or async/await mechanism, and then it processes the result.
+This is achieved using the event loop and callbacks. The event loop is like a queue where tasks are lined up and executed when their results are ready. Node.js doesn’t block or freeze waiting for things to finish; instead, it keeps working on other tasks.
+
+For example, imagine you're a waiter at a restaurant. When you take an order from a customer, you don’t wait in the kitchen until the food is ready. Instead, you go to other tables and take more orders, bring drinks, etc. Once the kitchen tells you the food is ready, you go back to serve it. Node.js works similarly: it doesn’t wait around, it keeps doing other things and comes back when the result is ready.
+
 -----------------------------------------------------------------------------------
 5. What is the role of the event loop in Node.js?
 
