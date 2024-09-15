@@ -80,7 +80,22 @@ Real time example-
 Think of a Promise like a restaurant order. When you place an order (create a Promise), you’re waiting for your food (asynchronous operation) to be prepared. The restaurant promises to deliver your food. While waiting, you can go about other tasks (continue executing other code). Once your food is ready, the restaurant either delivers it to your table (Promise is fulfilled) or informs you of a problem (Promise is rejected). In either case, you’re not stuck waiting idly; you can plan your next steps based on whether your order arrives as expected or not.
 -----------------------------------------------------------------------------------
 8. What is the purpose of the `async` and `await` keywords in Node.js?
+Answer: The async and await keywords in Node.js are used to simplify working with asynchronous operations. In JavaScript, many functions like network requests or file operations are asynchronous, meaning they don't block the main thread while waiting for a response. Traditionally, this was handled using callbacks or promises, which could sometimes result in complex and less readable code, especially when dealing with multiple asynchronous actions.
+The async keyword is used to declare a function that returns a promise. Inside an async function, the await keyword can be used to pause the execution of the code until the promise is resolved or rejected. This allows developers to write asynchronous code that looks and behaves like synchronous code, making it easier to read and maintain. If the promise resolves, the result is returned; if it rejects, the error can be caught using a try-catch block.
 
+For example:
+async function fetchData() {
+ try {
+  const data = await getDataFromAPI();
+  console.log(data);
+ } catch (error) {
+  console.error(error);
+ }
+}
+In this example, the await keyword ensures that the code execution waits for the getDataFromAPI() function to complete before moving forward.
+
+Real time example:
+Think of async and await like ordering food at a restaurant. Normally, you’d place your order, and while you wait for the food, you can continue having a conversation (other code execution continues). However, if you use await, it's as if you're putting your conversation on hold until your food arrives. Once the food is served, the conversation resumes. This approach helps prevent you from getting overwhelmed by too many interruptions (callback hell), ensuring you can focus on the next task only when the current one is done.
 -----------------------------------------------------------------------------------
 9. How does Node.js handle errors in asynchronous code?
 
