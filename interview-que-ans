@@ -59,6 +59,10 @@ Think of the event loop as a restaurant manager. The manager (event loop) takes 
 -----------------------------------------------------------------------------------
 6. What is a callback function in Node.js?
 
+Answer :A callback function in Node.js is a function passed as an argument to another function, which is then executed after the completion of the task. This approach is fundamental in handling asynchronous operations, such as reading files, making API requests, or interacting with databases. In Node.js, callbacks are a key part of non-blocking I/O, allowing the system to move on to other tasks while waiting for the completion of an operation. Once the operation is finished, the callback is invoked to process the result or handle any errors that occurred. For example, when reading a file using the `fs.readFile()` method, a callback function is provided to handle the data once the file has been read. This prevents the application from being blocked while the file is read from the disk.
+
+Real time example:
+Think of a callback function like placing an order at a coffee shop. After ordering, you don't stand and wait at the counter, blocking others from ordering. Instead, you move to a table or go about your day, and the barista will call your name (invoke the callback) when the coffee is ready. Similarly, Node.js allows the main thread to continue executing other tasks, and once the asynchronous operation is complete, the callback is "called" to notify the system.
 -----------------------------------------------------------------------------------
 7. Explain the concept of Promises in Node.js.
 
