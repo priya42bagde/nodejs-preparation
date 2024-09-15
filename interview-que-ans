@@ -50,8 +50,12 @@ This is achieved using the event loop and callbacks. The event loop is like a qu
 For example, imagine you're a waiter at a restaurant. When you take an order from a customer, you don’t wait in the kitchen until the food is ready. Instead, you go to other tables and take more orders, bring drinks, etc. Once the kitchen tells you the food is ready, you go back to serve it. Node.js works similarly: it doesn’t wait around, it keeps doing other things and comes back when the result is ready.
 
 -----------------------------------------------------------------------------------
-5. What is the role of the event loop in Node.js?
+5.Interviewer: What is the role of the event loop in Node.js?
 
+Answer: The event loop is a core part of Node.js's asynchronous architecture, responsible for handling non-blocking I/O operations. Node.js uses a single-threaded event-driven model, where the event loop allows it to manage multiple tasks concurrently without creating additional threads for each request. The event loop listens for incoming events (such as file reads, HTTP requests, or database queries) and delegates tasks to be executed by background workers or the operating system. Once these operations complete, the results are returned to the event loop, which then executes the appropriate callback functions in a sequential manner. This design ensures that Node.js can handle large numbers of I/O-bound operations efficiently, maintaining high performance even under heavy loads.
+
+Real time example...
+Think of the event loop as a restaurant manager. The manager (event loop) takes orders (tasks) from customers (incoming requests) and delegates them to chefs (background workers or OS processes). While the chefs are preparing meals (handling operations like reading from a file or querying a database), the manager continues taking orders from other customers without having to wait. When the meals are ready, the manager serves them to the appropriate customer (executes the callback), ensuring that every order is processed in the order it was received. This way, the manager keeps the restaurant running smoothly, attending to many customers simultaneously without being overwhelmed.
 -----------------------------------------------------------------------------------
 6. What is a callback function in Node.js?
 
