@@ -65,7 +65,19 @@ Real time example:
 Think of a callback function like placing an order at a coffee shop. After ordering, you don't stand and wait at the counter, blocking others from ordering. Instead, you move to a table or go about your day, and the barista will call your name (invoke the callback) when the coffee is ready. Similarly, Node.js allows the main thread to continue executing other tasks, and once the asynchronous operation is complete, the callback is "called" to notify the system.
 -----------------------------------------------------------------------------------
 7. Explain the concept of Promises in Node.js.
+Answer: In Node.js, a Promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. Promises provide a more powerful and flexible way to handle asynchronous operations compared to traditional callbacks. They allow you to write asynchronous code in a more synchronous manner, improving readability and maintainability.
+A Promise has three states:
+1. Pending: The initial state of the Promise, before the asynchronous operation has completed.
+2. Fulfilled: The state when the asynchronous operation completes successfully, and the Promise is resolved with a value.
+3. Rejected: The state when the asynchronous operation fails, and the Promise is rejected with a reason (error).
 
+Promises offer two main methods to handle the results of the asynchronous operation:
+- .then(): Used to define what should happen when the Promise is fulfilled.
+- .catch(): Used to define what should happen when the Promise is rejected.
+The chaining of these methods allows for a more linear flow of asynchronous code, as opposed to nested callbacks, which can lead to "callback hell."
+
+Real time example-
+Think of a Promise like a restaurant order. When you place an order (create a Promise), you’re waiting for your food (asynchronous operation) to be prepared. The restaurant promises to deliver your food. While waiting, you can go about other tasks (continue executing other code). Once your food is ready, the restaurant either delivers it to your table (Promise is fulfilled) or informs you of a problem (Promise is rejected). In either case, you’re not stuck waiting idly; you can plan your next steps based on whether your order arrives as expected or not.
 -----------------------------------------------------------------------------------
 8. What is the purpose of the `async` and `await` keywords in Node.js?
 
