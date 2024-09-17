@@ -98,10 +98,63 @@ Real time example:
 Think of async and await like ordering food at a restaurant. Normally, you’d place your order, and while you wait for the food, you can continue having a conversation (other code execution continues). However, if you use await, it's as if you're putting your conversation on hold until your food arrives. Once the food is served, the conversation resumes. This approach helps prevent you from getting overwhelmed by too many interruptions (callback hell), ensuring you can focus on the next task only when the current one is done.
 -----------------------------------------------------------------------------------
 9. How does Node.js handle errors in asynchronous code?
+Answer: In Node.js, error handling in asynchronous code is critical since the event-driven, non-blocking nature of Node.js often results in callbacks or promises. There are different strategies based on whether the asynchronous operation is using callbacks, promises, or async/await syntax.
+
+Callbacks: Errors are typically passed as the first argument in the callback function. This is called the "error-first" callback pattern.
+Promises: Errors can be handled using .catch() for promise rejections.
+Async/Await: You can use try...catch blocks to handle errors when working with asynchronous functions.
+
+// Error handling with callback
+function fetchData(callback) {
+    setTimeout(() => {
+        const error = false; // Simulating no error
+        if (error) {
+            return callback(new Error("Failed to fetch data"));
+        }
+        callback(null, "Data received");
+    }, 1000);
+}
+fetchData((err, data) => {
+    if (err) {
+        return console.error(err.message);
+    }
+    console.log(data);
+});
+
+// Error handling with Promises
+function fetchPromiseData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const error = false; // Simulating no error
+            if (error) {
+                return reject(new Error("Failed to fetch data"));
+            }
+            resolve("Data received via Promise");
+        }, 1000);
+    });
+}
+fetchPromiseData()
+    .then(data => console.log(data))
+    .catch(err => console.error(err.message));
+
+// Error handling with async/await
+async function fetchAsyncData() {
+    try {
+        let data = await fetchPromiseData();
+        console.log(data);
+    } catch (error) {
+        console.error("Error:", error.message);
+    }
+}
+fetchAsyncData();
 
 -----------------------------------------------------------------------------------
-10. What is the difference between synchronous and asynchronous functions?
+10. What is the difference between synchronous and asynchronous functions  in Node.js?
+Answer: 🔰 Let me explain with you a real time example:
+Think of a restaurant (Node.js) with a single chef. In a synchronous model, the chef handles one order at a time, cooking each meal fully before starting the next. If one meal takes a while, all subsequent orders are delayed. In an asynchronous model, the chef takes multiple orders and begins cooking one meal. While that meal is simmering, they start preparing the next. This method ensures that multiple tasks are handled concurrently, leading to quicker service overall.
 
+🔰 In Node.js, synchronous functions are executed in a strict sequence, meaning each task must complete before the next one begins. If a function, like reading a large file, takes a long time to process, it blocks the entire application, causing other operations to wait and potentially slowing down performance.
+Asynchronous functions allow multiple operations to run at the same time without waiting for each one to finish. This approach uses callbacks, promises, or async/await to handle long-running tasks (such as network requests or database queries) without freezing the application. Asynchronous programming is essential in Node.js to utilize its non-blocking, event-driven architecture, which helps manage many concurrent operations efficiently.
 -----------------------------------------------------------------------------------
 11. What is the purpose of the `require` function in Node.js?
 
