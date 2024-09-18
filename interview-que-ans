@@ -158,6 +158,43 @@ Asynchronous functions allow multiple operations to run at the same time without
 -----------------------------------------------------------------------------------
 11. What is the purpose of the `require` function in Node.js?
 
+Answer: The require function is used to include external modules in your Node.js application. These modules can be:
+- Built-in modules like fs (file system) or http
+- Third-party modules that are installed via npm (Node Package Manager)
+- Custom modules that you create within your project
+
+When you use require, Node.js will search for the module, load it, and return its exports, making its functionality available for use in the file that required it.
+
+Real time example:
+Think of require as a "delivery service" that brings necessary tools (modules) from different locations to your "construction site" (your app). For instance, if you’re building a house, you need a variety of tools like a hammer, saw, or drill, and you get these from different places (shops). Similarly, require fetches the tools (modules) that you need in your application from different sources.
+
+
+// Requiring a built-in module
+const fs = require('fs'); // file system module
+
+// Requiring a third-party module
+const express = require('express'); // express framework
+
+// Requiring a custom module
+const myModule = require('./myModule'); // relative path to custom module
+
+Difference between require and import:
+- require: This is part of Node.js CommonJS module system. It loads modules synchronously, and it is available in all versions of Node.js.
+  
+- import: This is part of ECMAScript (ES6) modules, which is a newer module system. It allows for asynchronous loading of modules, and you need to enable it in Node.js by setting "type": "module" in your package.json file or by using .mjs file extensions.
+
+
+const fs = require('fs'); // CommonJS style
+import fs from 'fs'; // ES6 style
+
+Key Differences:
+1. Syntax: require uses a function syntax (`const module = require('module')`), while import uses a declarative syntax (`import module from 'module'`).
+2. Loading: require loads modules synchronously (blocking), whereas import can be used to load modules asynchronously (non-blocking).
+3. Usage: require is the default in Node.js (CommonJS), while import follows the ES6 specification and is becoming more widely adopted in modern applications.
+
+When to Use require vs. import:
+- If you’re working on legacy Node.js projects or modules, you'll typically use require.
+- For modern applications that use ES6 and later, you may prefer import due to its cleaner syntax and potential for asynchronous loading.
 -----------------------------------------------------------------------------------
 12. How does Node.js manage modules and dependencies?
 
