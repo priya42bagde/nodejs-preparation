@@ -198,6 +198,9 @@ When to Use require vs. import:
 -----------------------------------------------------------------------------------
 12. How does Node.js manage modules and dependencies?
 
+📗 In Node.js, modules are reusable blocks of code that can be imported and exported between files. Node.js uses the CommonJS module system, which allows developers to break down complex applications into smaller, manageable pieces. The require function is used to load modules, and the module.exports or exports object is used to export functionalities from a module. 
+📗 Dependencies are external libraries or modules that a project needs in order to function. Node.js manages these dependencies via npm (Node Package Manager), which installs the necessary packages and maintains them in a node_modules folder. The project’s dependencies are listed in the package.json file, making it easier to track and install required modules. 
+📗 Real-Time Example- Think of Node.js modules like different departments in a company. Each department (module) is responsible for specific tasks, like sales or marketing. If one department needs information from another (for example, sales needs marketing data), they can request it using require. Dependencies are like the external vendors or tools (e.g., cloud services) that the company relies on to function. These vendors are managed and listed in a central database (package.json), so everyone knows what tools or vendors are being used.
 -----------------------------------------------------------------------------------
 13. What is the CommonJS module system?
 
