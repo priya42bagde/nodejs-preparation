@@ -204,6 +204,16 @@ When to Use require vs. import:
 -----------------------------------------------------------------------------------
 13. What is the CommonJS module system?
 
+When struggling 💡 this question in an interview, think of the CommonJS module system as a way to keep your Node.js code organized and efficient. It’s like having a well-organized toolbox: instead of handling everything at once, you can pick the specific tool (module) you need for the job. 
+Quick Explanation: “The CommonJS module system helps break your Node.js application into manageable, reusable pieces. When you use require, it’s like reaching for a tool in your toolbox to perform a task, ensuring your code stays modular and efficient.” 
+
+Now, let’s dive deeper! The CommonJS module system is the default in Node.js, and it works by treating each file in your application as a separate module. You can import these modules into other files using the require() function and export functionality using module.exports. 
+
+Key Features: 
+1.Encapsulation: Each module runs in its own scope, so variables and functions are private unless explicitly exported. 
+2.Synchronous loading: Modules are loaded one at a time, meaning require() blocks code execution until the module is fully loaded. 
+
+Real time example: Imagine your project as a well-stocked toolbox. Each module is a tool, like a hammer, screwdriver, or wrench. You don’t need all the tools at once—just the right one for the task at hand (i.e., using require() to import a specific module). And, if you invent your own custom tool, you can add it to the toolbox by exporting it (i.e., using module.exports).
 -----------------------------------------------------------------------------------
 14. Explain the concept of middleware in Express.js.
 
