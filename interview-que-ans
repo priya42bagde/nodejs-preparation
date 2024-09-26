@@ -229,6 +229,69 @@ Real time example: Imagine you're driving a car, and suddenly the brakes fail (a
 // Uncaught Exception Handler process.on('uncaughtException', (err) => { console.error('An uncaught error occurred!', err); // Clean up resources and shut down gracefully process.exit(1); // Exit the process }); // Simulating an uncaught exception setTimeout(() => { throw new Error('Oops! Something went wrong.'); }, 1000);
 -----------------------------------------------------------------------------------
 16. What are Streams in Node.js and how are they used?
+Streams are a way to handle reading or writing data in a continuous flow instead of reading/writing it all at once. In Node.js, streams are particularly useful for working with large amounts of data, as they process data in chunks, which optimizes memory usage and improves performance.
+
+There are four main types of streams in Node.js:
+
+
+
+-Readable: Streams from which data can be read (e.g., reading a file).
+
+-Writable: Streams to which data can be written (e.g., writing to a file).
+
+-Duplex: Streams that can be both readable and writable (e.g., a TCP socket).
+
+-Transform: Duplex streams that can modify or transform data as it is written and read (e.g., zipping/unzipping data).
+
+
+
+Why Use Streams?
+
+When dealing with large datasets, loading all the data into memory can slow down the system. Streams allow Node.js to process the data as it comes, breaking it into chunks, and avoiding memory overload. This makes it ideal for real-time applications like video/audio streaming or handling massive files.
+
+
+
+Real-time Example:
+
+Think of a stream like a conveyor belt in a factory. Imagine you're packing boxes (data). If all the boxes arrive at once, you'd be overwhelmed and have no space to store them. But if they come in one-by-one on a conveyor belt, you can pack each one efficiently without running out of space.
+
+Similarly, Node.js streams allow data to flow continuously without overwhelming the memory, making the system more efficient.
+
+
+
+Explanation of Code:
+
+-We create a readable stream using fs.createReadStream() to read from a large file.
+
+-The 'data' event is triggered each time a chunk of data is available, and the data is processed chunk-by-chunk instead of loading the entire file into memory at once.
+
+-The 'end' event is triggered when there's no more data to read.
+
+-The 'error' event handles any errors that occur while reading the file.
+
+
+
+Streams provide efficiency and scalability for handling large data sets without overwhelming system memory, making them an essential feature in Node.js for real-time applications and services.
+
+const fs = require('fs');
+
+// Create a readable stream
+const readableStream = fs.createReadStream('largeFile.txt', { encoding: 'utf8' });
+
+// Handle data as it flows in
+readableStream.on('data', (chunk) => {
+  console.log('Received chunk:', chunk);
+});
+
+// Handle when the stream ends
+readableStream.on('end', () => {
+  console.log('No more data.');
+});
+
+// Handle stream errors
+readableStream.on('error', (err) => {
+  console.error('Error while reading file:', err);
+});
 
 -----------------------------------------------------------------------------------
 17. Explain the different types of streams in Node.js.
