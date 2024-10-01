@@ -295,6 +295,17 @@ readableStream.on('error', (err) => {
 
 -----------------------------------------------------------------------------------
 17. Explain the different types of streams in Node.js.
+Answer: In Node.js, streams are a way to handle reading and writing data piece by piece (in chunks), rather than all at once. This is especially useful when dealing with large amounts of data, such as reading files or handling HTTP requests, as streams make the process more efficient by not loading everything into memory at once.
+
+There are four types of streams in Node.js:
+
+Readable Streams – Used for reading data. For example, fs.createReadStream() is used to read data from a file.
+Writable Streams – Used for writing data. For instance, fs.createWriteStream() is used to write data to a file.
+Duplex Streams – These are both readable and writable. For example, net.Socket in Node.js is a duplex stream, allowing us to send and receive data over a network connection.
+Transform Streams – These allow data to be modified while being read or written. A great example is zlib.createGzip() which compresses data during a stream.
+
+Real-time Example: 
+Imagine you’re downloading a large video file. Instead of waiting for the entire video to download before you can start watching, you can start streaming the video and watch it as the data comes in. This is how Node.js streams work, by handling data in chunks instead of waiting for the complete data.
 
 -----------------------------------------------------------------------------------
 18. What is the purpose of the `process` object in Node.js?
